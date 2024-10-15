@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<main>
+		<section class="video">
+			<video controls width="100%" height="80%" autoplay controls preload="auto">
+				<source src="/css/video/Garage Toulouse Présentation by LE GARAGE TOULOUSAIN.mp4" type="video/mp4"/>
+			</video>
+		</section>
+		<section class="main-container">
+			{% include "product/_search.html.twig" %}
+			<h1>Nos véhicules du mois</h1>
+			<div class="row">
+				{% for p in products %}
+					<div class="col">
+						{% include "_partials/_product_card.html.twig" %}
+					</div>
+				{% endfor %}
+			</div>
+			<hr>
+			{% include "shared/_picto.html.twig"%}
+			<hr>
+			<div class="row mt-5">
+				{% include "shared/_testimonials.html.twig" %}
+			</div>
+			<div class="row mt-5"></div>
+		</section>
+
+	</main>
+
+{% endblock %}
