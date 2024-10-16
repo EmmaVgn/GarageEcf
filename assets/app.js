@@ -8,6 +8,12 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import "./styles/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+import 'nouislider/dist/nouislider.css';
+import 'nouislider';
+import 'flip-toolkit';
+
 
 require("bootstrap");
 // Range Slider
