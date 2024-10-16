@@ -21,7 +21,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 class ProductRepository extends ServiceEntityRepository
 {
     /**
-     * @var $paginator
+     * @var PaginatorInterface
      */
     protected $paginator;
 
@@ -42,7 +42,7 @@ class ProductRepository extends ServiceEntityRepository
         return $this->paginator->paginate(
             $query,
             $search->page,
-            6
+            9
         );
     }
 

@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Repository\ModelRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ModelController extends AbstractController
 {
@@ -18,21 +20,24 @@ class ModelController extends AbstractController
     }
     
     #[Route('/brand/{slug}', name: 'model', priority: -1)]
-    public function model($slug, ModelRepository $modelRepository): Response
+    public function model($slug): Response
     {
-        $model = $modelRepository->findOneBy([
-            'slug' => $slug
-        ]);
-
+        $model = $this->modelRepository->findOneBy(['slug' => $slug]);
+    
         if (!$model) {
             throw $this->createNotFoundException("La marque demandée n'existe pas");
         }
-
+    
+        // Récupération des produits associés à la marque
+        $products = $model->getProducts();
+    
         return $this->render('product/model.html.twig', [
             'slug' => $slug,
             'model' => $model,
+            'products' => $products,
         ]);
     }
+    
 
     public function renderMenuList(): Response
     {

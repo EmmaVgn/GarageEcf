@@ -15,9 +15,9 @@
 	<h1>Marque:
 		{{ model.name }}</h1>
 	<div class="row">
-		{% for m in model.products %}
+		{% for p in products %}
 			<div class="col-lg-4 col-md-4">
-				{% include "_partials/_product_card.html.twig" %}
+				{% include "_partials/_product_card.html.twig" with {'p': p} %}
 			</div>
 		{% endfor %}
 	</div>

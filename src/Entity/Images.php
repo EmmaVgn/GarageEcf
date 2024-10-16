@@ -6,6 +6,7 @@ use App\Repository\ImagesRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ImagesRepository::class)]
 #[Vich\Uploadable]
@@ -17,7 +18,7 @@ class Images
     private ?int $id = null;
 
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName')]
-    private ?File $imageFile = null;    
+    private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
     private ?string $imageName = null;

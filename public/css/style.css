@@ -22,6 +22,11 @@ body {
   height: 90px;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -179,61 +184,99 @@ span.rating i {
 /*--------------------------------------------------------------
 # Filters
 --------------------------------------------------------------*/
+/* Styles globaux */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Styles pour le formulaire de filtre */
+.filter {
+  max-width: 400px; /* Limite la largeur du formulaire */
+  margin: 20px auto; /* Centrage du formulaire */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.collapse .form-check {
+  display: block; /* Force chaque catégorie à prendre une ligne complète */
+  margin-bottom: 10px; /* Ajoute un espacement entre les catégories */
+}
+
+/* Styles pour chaque box */
 .box {
-  padding: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd; /* Bordure plus douce */
+  border-radius: 6px;
+  background-color: #f9f9f9;
 }
 
-#collapseSections,
-#collapseNavigation {
-  height: 300px;
-  margin-right: 0.3rem !important;
-  overflow-y: scroll;
-}
-
-#collapseSections::-webkit-scrollbar,
-#collapseNavigation::-webkit-scrollbar {
-  width: 6px;
-}
-
-#collapseSections::-webkit-scrollbar-thumb,
-#collapseNavigation::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 2px;
-}
-
-#collapseSections::-webkit-scrollbar-track,
-#collapseNavigation::-webkit-scrollbar-track {
-  background-color: #ddd;
-  border-radius: 2px;
-}
-
+/* Styles pour les titres des boxes */
 .box-label {
   color: #1d2939;
-  font-size: 0.9rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.box-label .btn {
-  background-color: #fff;
-  padding: 0;
+/* Styles pour les boutons */
+.btn {
+  transition: background-color 0.3s ease;
 }
 
-.box-label .btn:focus {
-  box-shadow: none;
+.btn-outline-secondary {
+  border-color: #6c757d; /* Couleur de la bordure */
+  color: #6c757d; /* Couleur du texte */
 }
 
-.box-label .btn:active,
-.box-label .btn:hover {
-  color: #212529;
-  background-color: #fff;
-  border-color: transparent;
+.btn-outline-secondary:hover {
+  background-color: #e2e6ea; /* Couleur de fond au survol */
 }
 
-.filter {
-  display: block;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
+/* Styles pour les collapsibles */
+.collapse {
+  margin-top: 10px;
+}
+
+.collapse.show {
+  display: block; /* Affiche les éléments en cas de 'show' */
+}
+
+/* Styles pour les champs de formulaire */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px; /* Espacement entre les champs */
+}
+
+/* Styles pour les erreurs de formulaire */
+.form-error {
+  color: #dc3545; /* Couleur d'erreur */
+  font-size: 0.85rem;
+}
+
+/* Styles pour le bouton "Filtrer" */
+button[type="submit"] {
+  background-color: #7b8a8b; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #7b8a8b7e; /* Couleur de fond au survol */
+  color: black;
 }
 
 /*--------------------------------------------------------------

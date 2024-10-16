@@ -5,7 +5,6 @@ namespace App\Controller;
 use DateTime;
 use App\Data\SearchData;
 use App\Form\SearchFormType;
-use App\Repository\ModelRepository;
 use App\Repository\ProductRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -93,6 +92,4 @@ class ProductController extends AbstractController
             'totalItems' => $totalItems,
         ]);
     }
-
-    
 }

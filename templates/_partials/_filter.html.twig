@@ -21,8 +21,17 @@
 		</button>
 	</div>
 	<div class="collapse show mt-2 ps-2" id="collapseCategories">
-		{{ form_row(form.categories) }}
+		{% for category in form.categories %}
+			<div class="form-check">
+				{{ form_widget(category) }}
+				<label class="form-check-label">
+					{{ category.vars.label }}
+					<!-- Affiche le nom de la catégorie -->
+				</label>
+			</div>
+		{% endfor %}
 	</div>
+
 </div>
 <div class="box border-bottom ps-1">
 	<div class="box-label text-uppercase d-flex align-items-center">
@@ -32,9 +41,17 @@
 		</button>
 	</div>
 	<div class="collapse mt-2 ps-2" id="collapseModels">
-		{{ form_row(form.model) }}
+		{% for model in form.model %}
+			<div class="form-check">
+				{{ form_widget(model) }}
+				<label class="form-check-label" for="{{ model.vars.id }}">
+					{{ model.vars.label }}
+				</label>
+			</div>
+		{% endfor %}
 	</div>
 </div>
+
 <div class="box border-bottom ps-1 pb-3">
 	<div class="box-label text-uppercase d-flex align-items-center">
 		Prix
